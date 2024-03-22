@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kafka.demo</groupId>
-	<artifactId>topicDemo</artifactId>
+	<artifactId>demoKafka</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>topicDemo</name>
 	<description>Demo project for Spring Boot</description>
@@ -36,6 +36,22 @@
 			<artifactId>spring-kafka-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+				<!--Lastest version of Bouncy Castle provider from maven repository-->
+		<dependency>
+		    <groupId>org.bouncycastle</groupId>
+		    <artifactId>bcprov-jdk18on</artifactId>
+		    <version>1.77</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.32</version>
+			<scope>provided</scope>
+		</dependency>
+
+		
 	</dependencies>
 
 	<build>
