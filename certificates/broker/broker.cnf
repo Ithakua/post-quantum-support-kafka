@@ -1,0 +1,30 @@
+[req]
+prompt = no
+distinguished_name = dn
+default_md = sha256
+default_bits = 4096
+req_extensions = req_v3
+
+[ dn ]
+countryName = ES
+organizationName = KafkaTFG
+localityName = Madrid
+commonName=broker
+
+[ ca_v3 ]
+subjectKeyIdentifier=hash
+basicConstraints = critical,CA:true
+authorityKeyIdentifier=keyid:always,issuer:always
+keyUsage = critical,keyCertSign,cRLSign
+
+[ req_v3 ]
+subjectKeyIdentifier = hash
+basicConstraints = CA:FALSE
+nsComment = "OpenSSL Generated Certificate"
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth, clientAuth
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = localhost
+
