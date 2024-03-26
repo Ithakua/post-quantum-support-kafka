@@ -1,8 +1,15 @@
 #!/bin/bash
 
-cd ../certificates
+# Seleccion del docker compose con autenticacion de cliente
 
-#--------------Certification Authority Setup----------------#
+cd ../
+
+cp docker/docker-compose_noClientAuth.yaml ./docker-compose.yaml
+
+
+echo "#--------------Certification Authority Setup----------------#"
+
+cd ./certificates
 
 # 0. Generar la Certification Authority basada en un .cnf:
 openssl req -new -nodes \
@@ -16,10 +23,10 @@ openssl req -new -nodes \
 # 1. Convertir el ca.key a ca.pem:	
 cat ca/ca.crt ca/ca.key > ca/ca.pem
 
-#-----------------------------------------------------------#
+echo "#-----------------------------------------------------------#"
 
 
-#--------------Broker Setup----------------#
+echo "#--------------Broker Setup----------------#"
 
 # 2. Crear el certificado y la key del broker:
 openssl req -new \
@@ -61,29 +68,36 @@ keytool -importkeystore \
 -noprompt \
 -srcstorepass 123456
 
-# 6. Crear la broker truststore:
-keytool -genkeypair \
--destkeystore broker/broker.truststore.jks \
--storepass 123456 \
--alias broker-truststore \
--keyalg RSA \
--keysize 2048 \
--validity 365 \
--dname "CN=broker-truststore, OU=KafkaTFG, O=UPM, L=Madrid, ST=Spain, C=Spain" \
-
-# 7. Guardar la CA en la truststore:
+#6. Crear la client truststore y guardar la CA:
 keytool -import \
--keystore broker/broker.truststore.jks \
--storepass 123456 \
--alias KafkaTFG-ca \
--file ca/ca.pem \
--trustcacerts \
--noprompt
+    -alias KafkaTFG-ca \
+    -keystore broker/broker.truststore.pkcs12 \
+    -file ca/ca.crt \
+    -storepass 123456  \
+    -noprompt \
+    -storetype PKCS12
 
-
-# 8. Guardar las credenciales de la keystore, de la trustore y de la conexión ssl:
+# 7. Guardar las credenciales de la keystore, de la trustore y de la conexión ssl:
 echo "123456" > broker/broker_sslkey_creds
 echo "123456" > broker/broker_keystore_creds
 echo "123456" > broker/broker_truststore_creds
 
-#-----------------------------------------------------------#
+echo "#-----------------------------------------------------------#"
+
+
+echo "#--------------Client Setup----------------#"
+
+#8. Crear la client truststore y guardar la CA:
+keytool -import \
+    -alias KafkaTFG-ca \
+    -keystore clients/client.truststore.pkcs12 \
+    -file ca/ca.crt \
+    -storepass 123456  \
+    -noprompt \
+    -storetype PKCS12
+
+# 9. Guardar las credenciales de la trustore y de la conexión:
+echo "123456" > clients/client_truststore_creds
+echo "123456" > clients/client_sslkey_creds
+
+echo "#-----------------------------------------------------------#"

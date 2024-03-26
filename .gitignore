@@ -1,0 +1,27 @@
+# DockerCompose para pruebas
+docker-compose.yaml
+# Ignora archivos relacionados con certificados y keystore
+broker.crt
+broker.csr
+broker.key
+broker.p12
+broker.keystore.pkcs12
+broker.truststore.jks
+broker.truststore.pkcs12
+broker_sslkey_creds
+broker_keystore_creds
+broker_truststore_creds
+ca.crt
+ca.key
+ca.pem
+# En caso de NoAuth por parte del cliente
+client.truststore.pkcs12
+# En caso de Auth required por parte del cliente
+client-cert.csr        
+client.keystore.pkcs12  
+client_truststore_creds           
+client.p12              
+client-key.pem         
+client-signed.pem
+client_keystore_creds  
+client_sslkey_creds
