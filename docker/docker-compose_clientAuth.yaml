@@ -1,8 +1,11 @@
 version: '2'
+
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.6.0
     container_name: zookeeper
+    networks:
+      kafka-net:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -13,11 +16,14 @@ services:
       - zookeeper
     container_name: kafka-broker
     hostname: broker
+    networks:
+      kafka-net:
     ports:
       - 9092:9092
       - 9093:9093
     volumes:
       - $KAFKA_SSL_SECRETS_DIR:/etc/kafka/secrets
+      # - $KAFKA_SERVER_PROPERTIES:/etc/kafka/kafka.properties
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -32,4 +38,13 @@ services:
       KAFKA_SECURITY_PROTOCOL: SSL
       KAFKA_SECURITY_INTER_BROKER_PROTOCOL: SSL
       KAFKA_SSL_CLIENT_AUTH: 'required'
+      # KAFKA_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: "HTTPS"
+      # KAFKA_HEAP_OPTS: "-Xmx2G -Xms2G" # Ajusta el tamaño de la memoria heap según tus necesidades
+      # KAFKA_OPTS: "-XX:MaxDirectMemorySize=4G"
+      # KAFKA_METADATA_MAX_RETENTION_BYTES: "369296129"
+      # KAFKA_OFFSETS_TOPIC_SEGMENT_BYTES: "369296129"
+      # KAFKA_SOCKET_REQUEST_MAX_BYTES: "369296129"
+      # KAFKA_TRANSACTION_STATE_LOG_SEGMENT_BYTES: "369296129"
 
+networks:
+  kafka-net:

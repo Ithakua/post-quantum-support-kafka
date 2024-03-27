@@ -155,3 +155,4 @@ echo "123456" > clients/client_keystore_creds
 echo "123456" > clients/client_truststore_creds
 
 echo "#-----------------------------------------------------------#"
+

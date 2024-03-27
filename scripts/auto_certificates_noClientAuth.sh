@@ -87,7 +87,26 @@ echo "#-----------------------------------------------------------#"
 
 echo "#--------------Client Setup----------------#"
 
-#8. Crear la client truststore y guardar la CA:
+# # 6. Crear la broker truststore:
+# keytool -genkeypair \
+# -destkeystore clients/client.truststore.jks \
+# -storepass 123456 \
+# -alias broker-truststore \
+# -keyalg RSA \
+# -keysize 2048 \
+# -validity 365 \
+# -dname "CN=client-truststore, OU=KafkaTFG, O=UPM, L=Madrid, ST=Spain, C=Spain" \
+
+# # 7. Guardar la CA en la truststore:
+# keytool -import \
+# -keystore clients/client.truststore.jks \
+# -storepass 123456 \
+# -alias KafkaTFG-ca \
+# -file ca/ca.pem \
+# -trustcacerts \
+# -noprompt
+
+#6. Crear la client truststore y guardar la CA:
 keytool -import \
     -alias KafkaTFG-ca \
     -keystore clients/client.truststore.pkcs12 \

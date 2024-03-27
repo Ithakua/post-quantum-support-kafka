@@ -35,7 +35,6 @@ services:
       KAFKA_SSL_KEY_CREDENTIALS: broker_sslkey_creds
       KAFKA_SSL_TRUSTSTORE_FILENAME: broker.truststore.pkcs12
       KAFKA_SSL_TRUSTSTORE_CREDENTIALS: broker_truststore_creds
-      # KAFKA_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: "HTTPS"
 
 networks:
   kafka-net:

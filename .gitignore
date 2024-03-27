@@ -25,3 +25,5 @@ client-key.pem
 client-signed.pem
 client_keystore_creds  
 client_sslkey_creds
+# Para las capturas de trafico entre cliente y broker
+kafka_traffic.pcap
