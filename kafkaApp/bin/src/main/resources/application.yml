@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: kafkaApp
+  kafka:
+#    admin:
+#      timeout: 60000
+    security:
+      protocol: "SSL"
+    bootstrap-servers: localhost:9093
+    ssl:
+      key-password: 123456
+      trust-store-location: file:///home/ithaqua/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/certificates/clients/client.truststore.pkcs12
+      trust-store-password: 123456
+      key-store-location: file:///home/ithaqua/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/certificates/clients/client.keystore.pkcs12
+      key-store-password: 123456         
+      enabled-protocols: TLSv1.3
+      endpoint-identification-algorithm:
+    consumer:
+      group-id: groupBetaV2
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
