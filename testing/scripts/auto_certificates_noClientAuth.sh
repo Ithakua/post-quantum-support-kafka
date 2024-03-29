@@ -4,7 +4,7 @@
 
 cd ../
 
-cp docker/docker-compose_noClientAuth.yaml ./docker-compose.yaml
+cp docker/docker-compose_noClientAuth.yaml ./testing/docker-compose.yaml
 
 
 echo "#--------------Certification Authority Setup----------------#"
