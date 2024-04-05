@@ -7,4 +7,8 @@ public class MessageBody {
 	
 	private String message;
 
+//	public String getMessage() {
+//		return message;
+//	}
+
 }

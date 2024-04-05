@@ -69,27 +69,38 @@ keytool -importkeystore \
 -noprompt \
 -srcstorepass 123456
 
-# 6. Crear la broker truststore:
-keytool -genkeypair \
--destkeystore broker/broker.truststore.jks \
--storepass 123456 \
--alias broker-truststore \
--keyalg RSA \
--keysize 2048 \
--validity 365 \
--dname "CN=broker-truststore, OU=KafkaTFG, O=UPM, L=Madrid, ST=Spain, C=Spain" \
 
-# 7. Guardar la CA en la truststore:
+### NO FUNCIONAN BIEN LAS TRUSTSTORES JKS ###
+# #  Crear la broker truststore:
+# keytool -genkeypair \
+# -destkeystore broker/broker.truststore.jks \
+# -storepass 123456 \
+# -alias broker-truststore \
+# -keyalg RSA \
+# -keysize 2048 \
+# -validity 365 \
+# -dname "CN=broker-truststore, OU=KafkaTFG, O=UPM, L=Madrid, ST=Spain, C=Spain" \
+
+# #  Guardar la CA en la truststore:
+# keytool -import \
+# -keystore broker/broker.truststore.jks \
+# -storepass 123456 \
+# -alias KafkaTFG-ca \
+# -file ca/ca.pem \
+# -trustcacerts \
+# -noprompt
+
+#6. Crear la client truststore y guardar la CA:
 keytool -import \
--keystore broker/broker.truststore.jks \
--storepass 123456 \
--alias KafkaTFG-ca \
--file ca/ca.pem \
--trustcacerts \
--noprompt
+    -alias KafkaTFG-ca \
+    -keystore broker/broker.truststore.pkcs12 \
+    -file ca/ca.crt \
+    -storepass 123456  \
+    -noprompt \
+    -storetype PKCS12
 
 
-# 8. Guardar las credenciales de la keystore, de la trustore y de la conexión ssl:
+# 7. Guardar las credenciales de la keystore, de la trustore y de la conexión ssl:
 echo "123456" > broker/broker_sslkey_creds
 echo "123456" > broker/broker_keystore_creds
 echo "123456" > broker/broker_truststore_creds
@@ -101,7 +112,7 @@ echo "#--------------Client Setup----------------#"
 
 # # SOLO SI SE NECESITA AUTENTICARSE POR PARTE DEL CLIENTE # #
 
-# # 9. Crear el certificado y la key del cliente:
+# # 1. Crear el certificado y la key del cliente:
 openssl req -new \
     -newkey rsa:2048 \
     -keyout clients/client-key.pem \
@@ -109,7 +120,7 @@ openssl req -new \
     -config clients/client.cnf \
     -nodes
 
-# # 10. Firma el certificado del cliente con la clave privada de la CA
+# # 2. Firma el certificado del cliente con la clave privada de la CA
 openssl x509 -req \
     -days 3650 \
     -in clients/client-cert.csr \
@@ -120,7 +131,7 @@ openssl x509 -req \
     -extfile clients/client.cnf \
     -extensions req_v3
 
-# 11. Convertir el certificado del cliente a formato pkcs12:
+# 3. Convertir el certificado del cliente a formato pkcs12:
 openssl pkcs12 -export \
     -in clients/client-signed.pem \
     -inkey clients/client-key.pem \
@@ -130,7 +141,7 @@ openssl pkcs12 -export \
     -out clients/client.p12 \
     -password pass:123456
 
-# 12. Crear la client keystore:
+# 4. Crear la client keystore:
 keytool -importkeystore \
     -deststorepass 123456 \
     -destkeystore clients/client.keystore.pkcs12 \
@@ -140,7 +151,7 @@ keytool -importkeystore \
     -noprompt \
     -srcstorepass 123456
 
-#13. Crear la client truststore y guardar la CA:
+#5. Crear la client truststore y guardar la CA:
 keytool -import \
     -alias KafkaTFG-ca \
     -keystore clients/client.truststore.pkcs12 \
@@ -149,7 +160,7 @@ keytool -import \
     -noprompt \
     -storetype PKCS12
 
-# 15. Guardar las credenciales de la keystore, de la trustore y de la conexión:
+# 6. Guardar las credenciales de la keystore, de la trustore y de la conexión:
 echo "123456" > clients/client_sslkey_creds
 echo "123456" > clients/client_keystore_creds
 echo "123456" > clients/client_truststore_creds

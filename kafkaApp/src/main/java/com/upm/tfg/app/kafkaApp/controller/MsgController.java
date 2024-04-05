@@ -17,6 +17,10 @@ import lombok.RequiredArgsConstructor;
 public class MsgController {
 	
 	private final KafkaProducer producer;
+
+//	public MsgController(KafkaProducer producer){
+//		this.producer = producer;
+//	}
 	
 	@PostMapping
 	public ResponseEntity<String> sendMessage(@RequestBody MessageBody message){

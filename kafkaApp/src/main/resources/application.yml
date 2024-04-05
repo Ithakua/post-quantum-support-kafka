@@ -13,13 +13,21 @@ spring:
       trust-store-password: 123456
       key-store-location: file:///home/ithaqua/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/certificates/clients/client.keystore.pkcs12
       key-store-password: 123456         
-      enabled-protocols: TLSv1.3
+      enabled:
+        protocols: TLSv1.3
       endpoint-identification-algorithm:
     consumer:
       group-id: groupBetaV2
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        security:
+          providers: org.custom.securityProvider.BouncySecurityProvider
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        security:
+          providers: org.custom.securityProvider.BouncySecurityProvider
+
