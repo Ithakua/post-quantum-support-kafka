@@ -6,13 +6,14 @@ spring:
 #      timeout: 60000
     security:
       protocol: "SSL"
+
     bootstrap-servers: localhost:9093
     ssl:
       key-password: 123456
       trust-store-location: file:///home/ithaqua/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/certificates/clients/client.truststore.pkcs12
       trust-store-password: 123456
       key-store-location: file:///home/ithaqua/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/certificates/clients/client.keystore.pkcs12
-      key-store-password: 123456         
+      key-store-password: 123456
       enabled:
         protocols: TLSv1.3
       endpoint-identification-algorithm:
@@ -22,12 +23,16 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       properties:
+        ssl:
+          provider: BCJSSE
         security:
-          providers: org.custom.securityProvider.BouncySecurityProvider
+          providers: org.tfg.upm.bouncyCastle.securityProv.BouncySecurityProvider, org.tfg.upm.bouncyCastle.sslProv.BouncyJsseSecurityProvider
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       properties:
+        ssl:
+          provider: BCJSSE
         security:
-          providers: org.custom.securityProvider.BouncySecurityProvider
+          providers: org.tfg.upm.bouncyCastle.securityProv.BouncySecurityProvider, org.tfg.upm.bouncyCastle.sslProv.BouncyJsseSecurityProvider
 

@@ -20,6 +20,7 @@ services:
       - kafka-net 
     volumes:
       - $KAFKA_SSL_SECRETS_DIR:/etc/kafka/secrets
+      - $BOUNCY_CUSTOM_PROVIDER:/usr/share/java/kafka/BouncyCustomProvider.jar
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -35,6 +36,10 @@ services:
       KAFKA_SSL_KEY_CREDENTIALS: broker_sslkey_creds
       KAFKA_SSL_TRUSTSTORE_FILENAME: broker.truststore.pkcs12
       KAFKA_SSL_TRUSTSTORE_CREDENTIALS: broker_truststore_creds
+
+      KAFKA_SSL_PROVIDER: BCJSSE
+      KAFKA_SECURITY_PROVIDERS: org.tfg.upm.bouncyCastle.securityProv.BouncySecurityProvider, org.tfg.upm.bouncyCastle.sslProv.BouncyJsseSecurityProvider
+      KAFKA_SSL_ENABLED_PROTOCOLS: TLSv1.3
 
 networks:
   kafka-net:
