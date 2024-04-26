@@ -23,30 +23,16 @@ services:
       - 9093:9093
     volumes:
       - $KAFKA_SSL_SECRETS_DIR:/etc/kafka/secrets
-
       - $BOUNCY_CUSTOM_PROVIDER:/usr/share/java/kafka/BouncyCustomProvider.jar
-
-      # - $KAFKA_PROVIDER_SECURITY_PATH:/usr/share/java/kafka/BouncySecurityProvider.jar
-      # - $KAFKA_PROVIDER_SSL_PATH:/usr/share/java/kafka/BouncyJsseSecurityProvider.jar
-
-      # - $KAFKA_BC_JSSE_PATH:/usr/share/java/kafka/bctls-jdk18on-177.jar
-      # - $KAFKA_BC_UTIL_PATH:/usr/share/java/kafka/bcutil-jdk18on-177.jar
-      # - $KAFKA_BC_PKIX_PATH:/usr/share/java/kafka/bcpkix-jdk18on-177.jar
-
-
-
-      # - $KAFKA_JAVA_SECURITY:/usr/lib/jvm/java-11-zulu-openjdk/conf/security/java.security
-
-      # - $KAFKA_BC_DIR:/usr/share/java/kafka/bcprov-ext-jdk18on-177.jar
-      # - $KAFKA_SSL_JSSE_PATH:/usr/share/java/kafka/bctls-jdk18on-177.jar
-      # - $KAFKA_BC_DIR_3:/usr/share/java/kafka/bcprov-ext-jdk18on-177.jar
-
-
     environment:
 
       KAFKA_SSL_PROVIDER: BCJSSE
-      KAFKA_SECURITY_PROVIDERS: org.tfg.upm.bouncyCastle.securityProv.BouncySecurityProvider, org.tfg.upm.bouncyCastle.sslProv.BouncyJsseSecurityProvider
+      KAFKA_SECURITY_PROVIDERS: org.tfg.upm.bouncyCastle.securityProv.BouncySecurityProvider, org.tfg.upm.bouncyCastle.sslProv.BouncyJsseSecurityProvider, org.tfg.upm.bouncyCastle.pqcProv.BouncyPqcSecurityProvider
       KAFKA_SSL_ENABLED_PROTOCOLS: TLSv1.3
+      # KAFKA_SSL_ENGINE_FACTORY_CLASS: org.bouncycastle.tls.crypto.impl.bc.BcTlsMLKemDomain
+      # KAFKA_SSL_CIPHER_SUITES: Kyber-512
+
+
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
@@ -61,6 +47,7 @@ services:
       KAFKA_SECURITY_PROTOCOL: SSL
       KAFKA_SECURITY_INTER_BROKER_PROTOCOL: SSL
       KAFKA_SSL_CLIENT_AUTH: 'required'
+
       # KAFKA_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: "HTTPS"
       # KAFKA_HEAP_OPTS: "-Xmx2G -Xms2G" # Ajusta el tamaño de la memoria heap según tus necesidades
       # KAFKA_OPTS: "-XX:MaxDirectMemorySize=4G"

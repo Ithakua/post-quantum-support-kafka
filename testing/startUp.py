@@ -1,6 +1,5 @@
 import subprocess
 import sys
-import time
 import os
 
 def execute_shell_script(script_name):
@@ -31,6 +30,8 @@ if __name__ == "__main__":
         execute_shell_script("./scripts/auto_certificates_clientAuth.sh")
     elif parametro == "noClientAuth":
         execute_shell_script("./scripts/auto_certificates_noClientAuth.sh")
+    elif parametro == "pqc":
+        execute_shell_script("./scripts/auto_certificates_pqc.sh")
     else:
         print("Parámetro de entrada no válido.")
         sys.exit(1)
