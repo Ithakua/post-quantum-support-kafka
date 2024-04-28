@@ -9,7 +9,7 @@ def execute_python_script(script_name):
     subprocess.run(["python3", script_name])
 
 def execute_docker_compose():
-    os.system("gnome-terminal --title=DockerCompose_UP -- bash -c 'sudo docker-compose -f docker-compose.yaml up; exec bash'")
+    os.system("gnome-terminal --title=DockerCompose_UP -- bash -c 'sudo docker compose -f docker-compose.yaml up; exec bash'")
 
 def certificates_exist():
     return os.path.exists('../certificates/broker/broker.keystore.pkcs12')
