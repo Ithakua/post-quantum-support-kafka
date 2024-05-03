@@ -24,7 +24,7 @@ spring:
         ssl:
           provider: BCJSSE
         security:
-          providers: org.tfg.upm.bouncyCastle.securityProv.BouncySecurityProvider, org.tfg.upm.bouncyCastle.sslProv.BouncyJsseSecurityProvider
+          providers: org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider, org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -32,5 +32,5 @@ spring:
         ssl:
           provider: BCJSSE
         security:
-          providers: org.tfg.upm.bouncyCastle.securityProv.BouncySecurityProvider, org.tfg.upm.bouncyCastle.sslProv.BouncyJsseSecurityProvider
+          providers: org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider, org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider
 
