@@ -5,7 +5,7 @@ def execute_shell_script(script_name):
 
 def confirm_execution():
     confirmation = input("Estás a punto de ejecutar un script que limpiará los archivos. ¿Deseas continuar? (s/n): ")
-    return confirmation.lower() == 's'
+    return confirmation.lower() == 's' or confirmation.lower() == 'y'
 
 def clean_files():
     if confirm_execution():
