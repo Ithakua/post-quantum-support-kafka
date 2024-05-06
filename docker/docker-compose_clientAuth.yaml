@@ -1,5 +1,3 @@
-version: '2'
-
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.6.0
@@ -24,12 +22,14 @@ services:
     volumes:
       - $KAFKA_SSL_SECRETS_DIR:/etc/kafka/secrets
       - $BOUNCY_CUSTOM_PROVIDER:/usr/share/java/kafka/SecurityCustomProvider.jar
-    environment:
+      # - $KAFKA_JAVA_SECURITY:/usr/lib/jvm/java-11-zulu-openjdk/conf/security/java.security
 
+      # - $SSL_CUSTOM_PROVIDER:/usr/share/java/kafka/CustomEngineSSL.jar
+    environment:
       KAFKA_SSL_PROVIDER: BCJSSE
-      KAFKA_SECURITY_PROVIDERS: org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider, org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider, org.upm.tfg.securityCustomProvider.pqcProv.BouncyPqcSecurityProvider
+      KAFKA_SECURITY_PROVIDERS: org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider, org.upm.tfg.securityCustomProvider.pqcProv.BouncyPqcSecurityProvider, org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider
       KAFKA_SSL_ENABLED_PROTOCOLS: TLSv1.3
-      # KAFKA_SSL_ENGINE_FACTORY_CLASS: org.bouncycastle.tls.crypto.impl.bc.BcTlsMLKemDomain
+      #KAFKA_SSL_ENGINE_FACTORY_CLASS: org.upm.tfg.customEngine.sslCustomEngine.KafkaSslEngineFactory
       # KAFKA_SSL_CIPHER_SUITES: Kyber-512
       # ---------Deprecated---------
       # KAFKA_SECURITY_PROVIDERS: org.tfg.upm.bouncyCastle.securityProv.BouncySecurityProvider, org.tfg.upm.bouncyCastle.sslProv.BouncyJsseSecurityProvider, org.tfg.upm.bouncyCastle.pqcProv.BouncyPqcSecurityProvider

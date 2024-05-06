@@ -21,6 +21,8 @@ services:
     volumes:
       - $KAFKA_SSL_SECRETS_DIR:/etc/kafka/secrets
       - $BOUNCY_CUSTOM_PROVIDER:/usr/share/java/kafka/BouncyCustomProvider.jar
+      # - $KAFKA_JAVA_SECURITY:/usr/lib/jvm/java-11-zulu-openjdk/conf/security/java.security
+
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
