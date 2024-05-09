@@ -65,18 +65,20 @@
 #
 # security.provider.1=BouncyCastleJsseProvider
 security.provider.1=SUN
-security.provider.2=SunRsaSign
-security.provider.3=SunEC
-security.provider.4=SunJSSE
-security.provider.5=SunJCE
-security.provider.6=SunJGSS
-security.provider.7=SunSASL
-security.provider.8=XMLDSig
-security.provider.9=SunPCSC
-security.provider.10=JdkLDAP
-security.provider.11=JdkSASL
-security.provider.12=SunPKCS11
-security.provider.13=org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider
+security.provider.2=BCJSSE
+security.provider.3=BC
+security.provider.4=SunRsaSign
+security.provider.5=SunEC
+security.provider.6=SunJSSE
+security.provider.7=SunJCE
+security.provider.8=SunJGSS
+security.provider.9=SunSASL
+security.provider.10=XMLDSig
+security.provider.11=SunPCSC
+security.provider.12=JdkLDAP
+security.provider.13=JdkSASL
+security.provider.14=SunPKCS11
+
 
 #
 # A list of preferred providers for specific algorithms. These providers will

@@ -23,6 +23,7 @@ spring:
       properties:
         ssl:
           provider: BCJSSE
+          enabled.protocols: TLSv1.3
         security:
           providers: org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider, org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider
     producer:
@@ -31,6 +32,7 @@ spring:
       properties:
         ssl:
           provider: BCJSSE
+          enabled.protocols: TLSv1.3
         security:
           providers: org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider, org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider
 

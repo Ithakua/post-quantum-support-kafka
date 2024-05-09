@@ -1,5 +1,6 @@
 # DockerCompose para pruebas
 docker-compose.yaml
+
 # Ignora archivos relacionados con certificados y keystore
 broker.crt
 broker.csr
@@ -14,8 +15,10 @@ broker_truststore_creds
 ca.crt
 ca.key
 ca.pem
+
 # En caso de NoAuth por parte del cliente
 client.truststore.pkcs12
+
 # En caso de Auth required por parte del cliente
 client-cert.csr        
 client.keystore.pkcs12  
@@ -25,8 +28,10 @@ client-key.pem
 client-signed.pem
 client_keystore_creds  
 client_sslkey_creds
+
 # Para las capturas de trafico entre cliente y broker
 kafka_traffic.pcap
+
 # Para los test de rendimiento
 test-cert.csr
 test.keystore.pkcs12
@@ -37,3 +42,5 @@ test-signed.pem
 test_keystore_creds
 test_sslkey_creds
 
+# Todas las pruebas de rendimiento:
+restults*.csv
