@@ -27,3 +27,13 @@ client_keystore_creds
 client_sslkey_creds
 # Para las capturas de trafico entre cliente y broker
 kafka_traffic.pcap
+# Para los test de rendimiento
+test-cert.csr
+test.keystore.pkcs12
+test_truststore_creds
+test.p12
+test-key.pem
+test-signed.pem
+test_keystore_creds
+test_sslkey_creds
+
