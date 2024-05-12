@@ -36,10 +36,10 @@ if __name__ == "__main__":
         print("Los certificados ya existen. No se ejecutará el script.")
         sys.exit(1)
 
-    if parametro == "clientAuth":
-        execute_shell_script("./scripts/auto_certificates_clientAuth.sh")
-    elif parametro == "performanceTest":
-        execute_shell_script("./scripts/auto_certificates_noClientAuth.sh")
+    if parametro == "normal":
+        execute_shell_script("./scripts/auto_certificates_normal.sh")
+    elif parametro == "testing":
+        execute_shell_script("./scripts/auto_certificates_testing.sh")
     # elif parametro == "pqc":
     #     execute_shell_script("./scripts/auto_certificates_pqc.sh")
     else:
@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     execute_docker_compose()
 
-    if parametro == "performanceTest":
+    if parametro == "testing":
         print("Esperando a levantar el servidor antes de ejecutar las pruebas...")
         loading_bar(15)
         execute_bash_script("./scripts/performance_test.sh")
