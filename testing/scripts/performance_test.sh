@@ -10,20 +10,20 @@ declare -a kems=(
     # [0]="P-256"
     # [1]="P-384"
     # [2]="P-521"
-    [3]="X448"
-    [4]="X25519"
+    # [3]="X448"
+    # [4]="X25519"
 )
 
 declare -a pqkems=(
-    # [0]="kyber512"
-    # [1]="kyber768"
-    # [2]="kyber1024"
+    [0]="kyber512"
+    [1]="kyber768"
+    [2]="kyber1024"
 )
 
 ######### Begin modification zone ###############
 #repetir="n"
 repetir="y"
-num_reps=1
+num_reps=20
 # cafile="~/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/certificates/ca/ca.pem"
 # clientKey="~/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/certificates/test/test-key.pem"
 # clientCert="~/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/certificates/test/test-signed.pem"
