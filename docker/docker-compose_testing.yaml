@@ -22,7 +22,6 @@ services:
     volumes:
       - $KAFKA_SSL_SECRETS_DIR:/etc/kafka/secrets
       - $BOUNCY_CUSTOM_PROVIDER_TEST:/usr/share/java/kafka/SecurityCustomProvider.jar
-      # - $BOUNCY_CUSTOM_PROVIDER_EXPERIMENTAL:/usr/share/java/kafka/SecurityCustomProvider.jar
       # - $KAFKA_JAVA_SECURITY:/usr/lib/jvm/java-11-zulu-openjdk/conf/security/java.security
 
       # - $SSL_CUSTOM_PROVIDER:/usr/share/java/kafka/CustomEngineSSL.jar

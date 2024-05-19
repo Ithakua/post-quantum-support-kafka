@@ -45,8 +45,8 @@ if __name__ == "__main__":
         # Comando para meterte dentro del contenedor de kafka
         command4 = "sudo docker exec -it kafka-broker bash"
         subprocess.Popen(['gnome-terminal', '--title= Exec Terminal', '--', 'bash', '-c', f'{command4}; exec bash'])
-
+            
     if "performance" in sys.argv:
         # Comando para ejecutar el script de pruebas de rendimiento
         command5 = "./scripts/performance_test.sh"
-        subprocess.Popen(['gnome-terminal', '--title= Performance Test', '--', 'bash', '-c', f'{command5}; exec bash'])
+        subprocess.call(['bash', '-c', command5])

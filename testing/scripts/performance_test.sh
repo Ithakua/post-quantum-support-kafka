@@ -28,8 +28,8 @@ num_reps=20
 # clientKey="~/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/certificates/test/test-key.pem"
 # clientCert="~/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/certificates/test/test-signed.pem"
 cafile="../certificates/ca/ca.pem"
-clientKey="../certificates/test/test-key.pem"
-clientCert="../certificates/test/test-signed.pem"
+clientKey="../certificates/clients/clients-key.pem"
+clientCert="../certificates/clients/clients-signed.pem"
 serverport="9093"  # Port of the already running server
 ######### End modification zone ###############
 

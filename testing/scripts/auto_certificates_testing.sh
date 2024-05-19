@@ -167,60 +167,60 @@ echo "123456" > clients/client_truststore_creds
 
 echo "#-----------------------------------------------------------#"
 
-echo "#--------------TEST Client Setup----------------#"
+# echo "#--------------TEST Client Setup----------------#"
 
-# # SOLO SI SE NECESITA AUTENTICARSE POR PARTE DEL CLIENTE # #
-# # 1. Crear el certificado y la key del cliente:
-openssl req -new \
-    -newkey rsa:2048 \
-    -keyout test/test-key.pem \
-    -out test/test-cert.csr \
-    -config test/test.cnf \
-    -nodes
+# # # SOLO SI SE NECESITA AUTENTICARSE POR PARTE DEL CLIENTE # #
+# # # 1. Crear el certificado y la key del cliente:
+# openssl req -new \
+#     -newkey rsa:2048 \
+#     -keyout test/test-key.pem \
+#     -out test/test-cert.csr \
+#     -config test/test.cnf \
+#     -nodes
 
-# # 2. Firma el certificado del cliente con la clave privada de la CA
-openssl x509 -req \
-    -days 3650 \
-    -in test/test-cert.csr \
-    -CA ca/ca.crt \
-    -CAkey ca/ca.key \
-    -CAcreateserial \
-    -out test/test-signed.pem \
-    -extfile test/test.cnf \
-    -extensions req_v3
+# # # 2. Firma el certificado del cliente con la clave privada de la CA
+# openssl x509 -req \
+#     -days 3650 \
+#     -in test/test-cert.csr \
+#     -CA ca/ca.crt \
+#     -CAkey ca/ca.key \
+#     -CAcreateserial \
+#     -out test/test-signed.pem \
+#     -extfile test/test.cnf \
+#     -extensions req_v3
 
-# 3. Convertir el certificado del cliente a formato pkcs12:
-openssl pkcs12 -export \
-    -in test/test-signed.pem \
-    -inkey test/test-key.pem \
-    -chain \
-    -CAfile ca/ca.pem \
-    -name client_kafka_test \
-    -out test/test.p12 \
-    -password pass:123456
+# # 3. Convertir el certificado del cliente a formato pkcs12:
+# openssl pkcs12 -export \
+#     -in test/test-signed.pem \
+#     -inkey test/test-key.pem \
+#     -chain \
+#     -CAfile ca/ca.pem \
+#     -name client_kafka_test \
+#     -out test/test.p12 \
+#     -password pass:123456
 
-# 4. Crear la client keystore:
-keytool -importkeystore \
-    -deststorepass 123456 \
-    -destkeystore test/test.keystore.pkcs12 \
-    -srckeystore test/test.p12 \
-    -deststoretype PKCS12  \
-    -srcstoretype PKCS12 \
-    -noprompt \
-    -srcstorepass 123456
+# # 4. Crear la client keystore:
+# keytool -importkeystore \
+#     -deststorepass 123456 \
+#     -destkeystore test/test.keystore.pkcs12 \
+#     -srckeystore test/test.p12 \
+#     -deststoretype PKCS12  \
+#     -srcstoretype PKCS12 \
+#     -noprompt \
+#     -srcstorepass 123456
 
-#5. Crear la client truststore y guardar la CA:
-keytool -import \
-    -alias KafkaTFG-ca \
-    -keystore test/test.truststore.pkcs12 \
-    -file ca/ca.crt \
-    -storepass 123456  \
-    -noprompt \
-    -storetype PKCS12
+# #5. Crear la client truststore y guardar la CA:
+# keytool -import \
+#     -alias KafkaTFG-ca \
+#     -keystore test/test.truststore.pkcs12 \
+#     -file ca/ca.crt \
+#     -storepass 123456  \
+#     -noprompt \
+#     -storetype PKCS12
 
-# 6. Guardar las credenciales de la keystore, de la trustore y de la conexión:
-echo "123456" > test/test_sslkey_creds
-echo "123456" > test/test_keystore_creds
-echo "123456" > test/test_truststore_creds
+# # 6. Guardar las credenciales de la keystore, de la trustore y de la conexión:
+# echo "123456" > test/test_sslkey_creds
+# echo "123456" > test/test_keystore_creds
+# echo "123456" > test/test_truststore_creds
 
-echo "#-----------------------------------------------------------#"
+# echo "#-----------------------------------------------------------#"
