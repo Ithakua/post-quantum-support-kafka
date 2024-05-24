@@ -21,8 +21,9 @@ openssl req -new -nodes \
    -out ca/ca.crt \
    -config ca/ca.cnf
 
-# 1. Convertir el ca.key a ca.pem:	
-cat ca/ca.crt ca/ca.key > ca/ca.pem
+# ERROR TERRIBLE DE SEGURIDAD
+# # 1. Convertir el ca.key a ca.pem:	
+# cat ca/ca.crt ca/ca.key > ca/ca.pem
 
 echo "#-----------------------------------------------------------#"
 
@@ -54,7 +55,7 @@ openssl pkcs12 -export \
 -in broker/broker.crt \
 -inkey broker/broker.key \
 -chain \
--CAfile ca/ca.pem \
+-CAfile ca/ca.crt \
 -name broker \
 -out broker/broker.p12 \
 -password pass:123456
@@ -136,7 +137,7 @@ openssl pkcs12 -export \
     -in clients/client-signed.pem \
     -inkey clients/client-key.pem \
     -chain \
-    -CAfile ca/ca.pem \
+    -CAfile ca/ca.crt \
     -name client_kafka \
     -out clients/client.p12 \
     -password pass:123456

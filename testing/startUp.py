@@ -47,8 +47,3 @@ if __name__ == "__main__":
         sys.exit(1)
 
     execute_docker_compose()
-
-    if parametro == "testing":
-        print("Esperando a levantar el servidor antes de ejecutar las pruebas...")
-        loading_bar(15)
-        execute_bash_script("./scripts/performance_test.sh")
