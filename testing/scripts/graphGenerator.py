@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Leer el archivo CSV
-df = pd.read_csv('handshake_times.csv')
+df = pd.read_csv('../SecurityCustomProvider/handshake_times.csv')
 
 # Mostrar la cabecera del DataFrame para verificar los datos
 print(df.head())
@@ -16,8 +16,8 @@ for column in df.columns[1:]:
 
 # Añadir título y etiquetas
 plt.title('Handshake Time')
-plt.xlabel('Iteration Number')
-plt.ylabel('Time (seconds)')
+plt.xlabel('N Iteration')
+plt.ylabel('Time (miliseconds)')
 
 # Añadir una leyenda
 plt.legend()

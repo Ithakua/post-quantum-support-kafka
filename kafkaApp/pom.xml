@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.upm.tfg.app</groupId>
-	<artifactId>kafkaApp</artifactId>
+	<artifactId>KafkaApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>kafkaApp</name>
 	<description>New infrastructure Kafka Application</description>
