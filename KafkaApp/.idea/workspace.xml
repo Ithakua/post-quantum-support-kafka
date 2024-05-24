@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2858cbb8-0848-4b9a-a964-c59c138ff569" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/KafkaApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/config/KafkaTopicConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/consumer/KafkaConsumer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/controller/MsgController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/model/MessageBody.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/producer/KafkaProducer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/org/upm/tfg/app/kafkaApp/KafkaAppApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/handshake_times.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/src/main/java/org/upm/tfg/securityCustomProvider/testHandshake/SslContextSetUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/src/main/java/org/upm/tfg/securityCustomProvider/testHandshake/SslContextSetUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/config/NamedGroupNames.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/config/NamedGroupNames.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/pqcProv/BouncyPqcSecurityProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/pqcProv/BouncyPqcSecurityProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/sslProv/BouncyJsseSecurityProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/sslProv/BouncyJsseSecurityProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/sslProv/BouncyJsseSecurityProvider_Modern.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/sslProv/BouncyJsseSecurityProvider_Modern.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/standardProv/BouncyStandardSecurityProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/standardProv/BouncyStandardSecurityProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/testHandshake/SslContextSetUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/testHandshake/SslContextSetUp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/testHandshake/TestHandshake.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/testHandshake/TestHandshake.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2fyOEIQa1WJ5LUyclnBhl6UzLRM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.KafkaApplication.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.KafkaApplication.executor": "Run",
+    "git-widget-placeholder": "finalVersion",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/ithaqua/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/KafkaApp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="KafkaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="KafkaApp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.upm.tfg.app.kafkaApp.KafkaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2858cbb8-0848-4b9a-a964-c59c138ff569" name="Changes" comment="" />
+      <created>1714769738306</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714769738306</updated>
+      <workItem from="1714769739982" duration="7000" />
+      <workItem from="1714769757178" duration="91000" />
+      <workItem from="1714769857320" duration="165000" />
+      <workItem from="1714770098332" duration="167000" />
+      <workItem from="1714839057316" duration="1647000" />
+      <workItem from="1715017866691" duration="5975000" />
+      <workItem from="1715245382112" duration="5524000" />
+      <workItem from="1715279681163" duration="1802000" />
+      <workItem from="1715348639423" duration="64000" />
+      <workItem from="1715542091569" duration="1910000" />
+      <workItem from="1715548827633" duration="2000" />
+      <workItem from="1715548839636" duration="8000" />
+      <workItem from="1715550241182" duration="268000" />
+      <workItem from="1715594081602" duration="1853000" />
+      <workItem from="1716120452084" duration="4646000" />
+      <workItem from="1716240261509" duration="85000" />
+      <workItem from="1716555439774" duration="1829000" />
+      <workItem from="1716562349469" duration="763000" />
+      <workItem from="1716568196033" duration="470000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.kafka:kafka_2.13" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-messaging" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+  </component>
+</project>
