@@ -43,4 +43,6 @@ test_keystore_creds
 test_sslkey_creds
 
 # Todas las pruebas de rendimiento:
-restults*.csv
+*.csv
+
+

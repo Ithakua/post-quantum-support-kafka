@@ -12,9 +12,6 @@ spring:
       trust-store-password: 123456
       key-store-location: file:${user.dir}/../certificates/clients/client.keystore.pkcs12
       key-store-password: 123456
-      enabled:
-        protocols: TLSv1.3
-      endpoint-identification-algorithm:
     consumer:
       group-id: groupBetaV2
       auto-offset-reset: earliest

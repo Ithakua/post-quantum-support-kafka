@@ -27,7 +27,7 @@ services:
       # - $SSL_CUSTOM_PROVIDER:/usr/share/java/kafka/CustomEngineSSL.jar
     environment:
       KAFKA_SSL_PROVIDER: BCJSSE
-      KAFKA_SECURITY_PROVIDERS: org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider, org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider, org.upm.tfg.securityCustomProvider.pqcProv.BouncyPqcSecurityProvider
+      KAFKA_SECURITY_PROVIDERS: org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider, org.upm.tfg.securityCustomProvider.pqcProv.BouncyPqcSecurityProvider, org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider
       # KAFKA_SECURITY_PROVIDERS: org.upm.tfg.securityTestCustomProvider.sslProv.BouncyJsseSecurityProvider, org.upm.tfg.securityTestCustomProvider.standardProv.BouncyStandardSecurityProvider, org.upm.tfg.securityTestCustomProvider.pqcProv.BouncyPqcSecurityProvider
      
       KAFKA_SSL_ENABLED_PROTOCOLS: TLSv1.3
@@ -50,8 +50,8 @@ services:
       KAFKA_SSL_KEYSTORE_CREDENTIALS: broker_keystore_creds
       KAFKA_SSL_KEY_CREDENTIALS: broker_sslkey_creds
       KAFKA_SECURITY_PROTOCOL: SSL
-      KAFKA_SECURITY_INTER_BROKER_PROTOCOL: SSL
-      KAFKA_SSL_CLIENT_AUTH: 'required'
+      # KAFKA_SECURITY_INTER_BROKER_PROTOCOL: SSL
+      # KAFKA_SSL_CLIENT_AUTH: 'required'
 
       # KAFKA_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: "HTTPS"
       # KAFKA_HEAP_OPTS: "-Xmx2G -Xms2G" # Ajusta el tamaño de la memoria heap según tus necesidades
