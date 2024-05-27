@@ -4,34 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2858cbb8-0848-4b9a-a964-c59c138ff569" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/KafkaApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/config/KafkaTopicConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/consumer/KafkaConsumer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/controller/MsgController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/model/MessageBody.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/producer/KafkaProducer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/org/upm/tfg/app/kafkaApp/KafkaAppApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/handshake_times.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/src/main/java/org/upm/tfg/securityCustomProvider/testHandshake/SslContextSetUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/src/main/java/org/upm/tfg/securityCustomProvider/testHandshake/SslContextSetUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/config/NamedGroupNames.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/config/NamedGroupNames.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/pqcProv/BouncyPqcSecurityProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/pqcProv/BouncyPqcSecurityProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/sslProv/BouncyJsseSecurityProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/sslProv/BouncyJsseSecurityProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/sslProv/BouncyJsseSecurityProvider_Modern.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/sslProv/BouncyJsseSecurityProvider_Modern.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/standardProv/BouncyStandardSecurityProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/standardProv/BouncyStandardSecurityProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/testHandshake/SslContextSetUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/testHandshake/SslContextSetUp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/testHandshake/TestHandshake.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SecurityCustomProvider/target/classes/org/upm/tfg/securityCustomProvider/testHandshake/TestHandshake.class" afterDir="false" />
-    </list>
+    <list default="true" id="2858cbb8-0848-4b9a-a964-c59c138ff569" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +40,7 @@
     "Spring Boot.KafkaApplication.executor": "Run",
     "git-widget-placeholder": "finalVersion",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/ithaqua/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/KafkaApp",
+    "last_opened_file_path": "/home/ithaqua/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/SecurityCustomProvider",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,7 +49,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -124,6 +97,7 @@
       <workItem from="1716555439774" duration="1829000" />
       <workItem from="1716562349469" duration="763000" />
       <workItem from="1716568196033" duration="470000" />
+      <workItem from="1716802875791" duration="1056000" />
     </task>
     <servers />
   </component>

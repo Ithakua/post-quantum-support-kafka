@@ -1,6 +1,8 @@
 #!/bin/bash
 
 
+######### BETA (no funcional)##########
+
 # Seleccion del docker compose con autenticacion de cliente
 
 cd ../

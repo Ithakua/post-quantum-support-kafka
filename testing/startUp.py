@@ -36,7 +36,7 @@ if __name__ == "__main__":
         print("Los certificados ya existen. No se ejecutará el script.")
         sys.exit(1)
 
-    if parametro == "normal":
+    if parametro == "mlkem":
         execute_shell_script("./scripts/auto_certificates_normal.sh")
     elif parametro == "testing":
         execute_shell_script("./scripts/auto_certificates_testing.sh")

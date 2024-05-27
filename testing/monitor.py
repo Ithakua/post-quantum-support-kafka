@@ -5,7 +5,7 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Elige el modo de ejecucion: tcpdump, health, exec o performance")
+        print("Elige el modo de ejecucion: tcpdump, health, exec o graph")
         sys.exit(1)
 
     if "tcpdump" in sys.argv:

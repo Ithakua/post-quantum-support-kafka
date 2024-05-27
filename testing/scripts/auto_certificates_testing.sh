@@ -12,7 +12,7 @@ echo "#--------------Certification Authority Setup----------------#"
 
 cd ./certificates
 
-# 0. Generar la Certification Authority basada en un .cnf:
+# 1. Generar la Certification Authority basada en un .cnf:
 openssl req -new -nodes \
    -x509 \
    -days 365 \
@@ -21,15 +21,12 @@ openssl req -new -nodes \
    -out ca/ca.crt \
    -config ca/ca.cnf
 
-# # 1. Convertir el ca.key a ca.pem:	
-# cat ca/ca.crt ca/ca.key > ca/ca.pem
-
 echo "#-----------------------------------------------------------#"
 
 
 echo "#--------------Broker Setup----------------#"
 
-# 2. Crear el certificado y la key del broker:
+# 1. Crear el certificado y la key del broker:
 openssl req -new \
 -newkey rsa:2048 \
 -keyout broker/broker.key \
@@ -38,7 +35,7 @@ openssl req -new \
 -nodes
 
 
-# 3. Firmar los certificados con la CA:
+# 2. Firmar los certificados con la CA:
 openssl x509 -req \
 -days 3650 \
 -in broker/broker.csr \
@@ -49,7 +46,7 @@ openssl x509 -req \
 -extfile broker/broker.cnf \
 -extensions req_v3
 
-# 4. Convertir el certificado del servidor a formato pkcs12:
+# 3. Convertir el certificado del servidor a formato pkcs12:
 openssl pkcs12 -export \
 -in broker/broker.crt \
 -inkey broker/broker.key \
@@ -59,7 +56,7 @@ openssl pkcs12 -export \
 -out broker/broker.p12 \
 -password pass:123456
 
-# 5. Crear la broker keystore:
+# 4. Crear la broker keystore:
 keytool -importkeystore \
 -deststorepass 123456 \
 -destkeystore broker/broker.keystore.pkcs12 \
@@ -69,28 +66,7 @@ keytool -importkeystore \
 -noprompt \
 -srcstorepass 123456
 
-
-### NO FUNCIONAN BIEN LAS TRUSTSTORES JKS ###
-# #  Crear la broker truststore:
-# keytool -genkeypair \
-# -destkeystore broker/broker.truststore.jks \
-# -storepass 123456 \
-# -alias broker-truststore \
-# -keyalg RSA \
-# -keysize 2048 \
-# -validity 365 \
-# -dname "CN=broker-truststore, OU=KafkaTFG, O=UPM, L=Madrid, ST=Spain, C=Spain" \
-
-# #  Guardar la CA en la truststore:
-# keytool -import \
-# -keystore broker/broker.truststore.jks \
-# -storepass 123456 \
-# -alias KafkaTFG-ca \
-# -file ca/ca.pem \
-# -trustcacerts \
-# -noprompt
-
-#6. Crear la client truststore y guardar la CA:
+# 5. Crear la client truststore y guardar la CA:
 keytool -import \
     -alias KafkaTFG-ca \
     -keystore broker/broker.truststore.pkcs12 \
@@ -100,7 +76,7 @@ keytool -import \
     -storetype PKCS12
 
 
-# 7. Guardar las credenciales de la keystore, de la trustore y de la conexión ssl:
+# 6. Guardar las credenciales de la keystore, de la trustore y de la conexión ssl:
 echo "123456" > broker/broker_sslkey_creds
 echo "123456" > broker/broker_keystore_creds
 echo "123456" > broker/broker_truststore_creds
