@@ -6,25 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2858cbb8-0848-4b9a-a964-c59c138ff569" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/SecurityCustomProvider.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/SecurityTestCustomProvider.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/upm/tfg/app/kafkaApp/config/KafkaTopicConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/upm/tfg/app/kafkaApp/config/KafkaTopicConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/upm/tfg/app/kafkaApp/consumer/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/upm/tfg/app/kafkaApp/consumer/KafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/upm/tfg/app/kafkaApp/controller/MsgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/upm/tfg/app/kafkaApp/controller/MsgController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/upm/tfg/app/kafkaApp/producer/KafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/upm/tfg/app/kafkaApp/producer/KafkaProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/KafkaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/KafkaApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/config/KafkaTopicConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/config/KafkaTopicConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/consumer/KafkaConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/consumer/KafkaConsumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/controller/MsgController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/controller/MsgController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/model/MessageBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/model/MessageBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/producer/KafkaProducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/upm/tfg/app/kafkaApp/producer/KafkaProducer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker/docker-compose_normal.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testing/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../testing/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testing/monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/../testing/monitor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testing/scripts/auto_certificates_normal.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testing/scripts/ddosKafka.py" beforeDir="false" afterPath="$PROJECT_DIR$/../testing/scripts/ddosKafka.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testing/scripts/graphGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../testing/scripts/graphGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testing/startUp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../testing/startUp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../certificates/test/test.cnf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testing/scripts/auto_certificates_allgroups.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../testing/scripts/auto_certificates_allgroups.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +106,7 @@
       <workItem from="1716802875791" duration="2892000" />
       <workItem from="1716844722600" duration="3138000" />
       <workItem from="1716887151101" duration="4528000" />
+      <workItem from="1716911392984" duration="760000" />
     </task>
     <servers />
   </component>

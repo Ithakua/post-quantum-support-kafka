@@ -1,3 +1,4 @@
+#Configuración BC Custom de la infraestructura de Kafka#
 spring:
   application:
     name: kafkaApp
