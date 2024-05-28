@@ -1,0 +1,36 @@
+#Configuración BC Custom de la infraestructura de Kafka#
+spring:
+  application:
+    name: kafkaApp
+  kafka:
+    security:
+      protocol: "SSL"
+
+    bootstrap-servers: localhost:9093
+    ssl:
+      key-password: 123456
+      trust-store-location: file:${user.dir}/../certificates/clients/client.truststore.pkcs12
+      trust-store-password: 123456
+      key-store-location: file:${user.dir}/../certificates/clients/client.keystore.pkcs12
+      key-store-password: 123456
+    consumer:
+      group-id: groupBetaV2
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        ssl:
+          provider: BCJSSE
+          enabled.protocols: TLSv1.3
+        security:
+          providers: org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider, org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        ssl:
+          provider: BCJSSE
+          enabled.protocols: TLSv1.3
+        security:
+          providers: org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider, org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider
+

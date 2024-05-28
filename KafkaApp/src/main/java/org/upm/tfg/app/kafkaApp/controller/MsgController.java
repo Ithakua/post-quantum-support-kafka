@@ -11,18 +11,22 @@ import org.upm.tfg.app.kafkaApp.producer.KafkaProducer;
 
 import lombok.RequiredArgsConstructor;
 
+
 @RestController
-@RequestMapping("api/v2/messages")
+// Ruta base para todos los endpoints
+@RequestMapping("api/input/messages")
+// Lombok genera un constructor para todos los campos
 @RequiredArgsConstructor
 public class MsgController {
-	
+
 	private final KafkaProducer producer;
-	
+
 	@PostMapping
+	// Recibe un JSON con un body específico, lo envía a Kafka y devuelve una respuesta HTTP
 	public ResponseEntity<String> sendMessage(@RequestBody MessageBody message){
+		// Envía el mensaje a Kafka
 		producer.sendMessage(message.getMessage());
+		// Devuelve una respuesta HTTP 200 con un mensaje de éxito
 		return ResponseEntity.ok("Message sended correctly!");
 	}
-	
-
 }

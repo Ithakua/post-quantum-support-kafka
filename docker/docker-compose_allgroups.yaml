@@ -21,7 +21,7 @@ services:
       - 9093:9093
     volumes:
       - $KAFKA_SSL_SECRETS_DIR:/etc/kafka/secrets
-      - $BOUNCY_CUSTOM_PROVIDER_TEST:/usr/share/java/kafka/SecurityCustomProvider.jar
+      - $BOUNCY_CUSTOM_PROVIDER_ALLGROUPS:/usr/share/java/kafka/SecurityCustomProvider.jar
     environment:
       KAFKA_SSL_PROVIDER: BCJSSE
       KAFKA_SECURITY_PROVIDERS: org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider, org.upm.tfg.securityCustomProvider.pqcProv.BouncyPqcSecurityProvider, org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider    

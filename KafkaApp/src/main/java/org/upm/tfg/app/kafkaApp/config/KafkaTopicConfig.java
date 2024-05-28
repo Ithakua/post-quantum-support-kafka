@@ -10,10 +10,9 @@ public class KafkaTopicConfig {
 
 	@Bean
 	public NewTopic topicGenerator() {
+		// Se crea nuevo topic de Kafka llamado "topicExample"
 		return TopicBuilder
 				.name("topicExample")
-				.build();	
-		}
-	
-	
+				.build();
+	}
 }

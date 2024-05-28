@@ -27,7 +27,7 @@ def loading_bar(seconds):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Elige el modo de ejecucion: clientAuth o performanceTest")
+        print("Elige el modo de ejecucion: default, mlkem o allgroups")
         sys.exit(1)
 
     parametro = sys.argv[1]
@@ -37,11 +37,11 @@ if __name__ == "__main__":
         sys.exit(1)
 
     if parametro == "mlkem":
-        execute_shell_script("./scripts/auto_certificates_normal.sh")
-    elif parametro == "testing":
-        execute_shell_script("./scripts/auto_certificates_testing.sh")
-    # elif parametro == "pqc":
-    #     execute_shell_script("./scripts/auto_certificates_pqc.sh")
+        execute_shell_script("./scripts/auto_certificates_mlkem.sh")
+    elif parametro == "allgroups":
+        execute_shell_script("./scripts/auto_certificates_allgroups.sh")
+    elif parametro == "default":
+        execute_shell_script("./scripts/auto_certificates_default.sh")
     else:
         print("Parámetro de entrada no válido.")
         sys.exit(1)

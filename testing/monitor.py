@@ -5,7 +5,7 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Elige el modo de ejecucion: tcpdump, health, exec o graph")
+        print("Elige el modo de ejecucion: tcpdump, health, exec, graph o traffic")
         sys.exit(1)
 
     if "tcpdump" in sys.argv:
@@ -49,4 +49,9 @@ if __name__ == "__main__":
     if "graph" in sys.argv:
         # Comando para ejecutar el script de generación de gráficos
         command5 = "python3 scripts/graphGenerator.py"
+        subprocess.call(command5, shell=True)
+
+    if "traffic" in sys.argv:
+        # Comando para ejecutar el script de generación de gráficos
+        command5 = "python3 scripts/ddosKafka.py"
         subprocess.call(command5, shell=True)
