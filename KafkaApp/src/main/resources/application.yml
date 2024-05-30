@@ -23,7 +23,7 @@ spring:
           provider: BCJSSE
           enabled.protocols: TLSv1.3
         security:
-          providers: org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider, org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider
+          providers: org.upm.tfg.customSecurityProvider.sslProv.JsseSecurityProvider, org.upm.tfg.customSecurityProvider.pqcProv.PqcSecurityProvider, org.upm.tfg.customSecurityProvider.normalProv.NormalSecurityProvider
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -32,5 +32,5 @@ spring:
           provider: BCJSSE
           enabled.protocols: TLSv1.3
         security:
-          providers: org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider, org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider
+          providers: org.upm.tfg.customSecurityProvider.sslProv.JsseSecurityProvider, org.upm.tfg.customSecurityProvider.pqcProv.PqcSecurityProvider, org.upm.tfg.customSecurityProvider.normalProv.NormalSecurityProvider
 

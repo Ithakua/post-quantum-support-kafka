@@ -21,10 +21,10 @@ services:
       - 9093:9093
     volumes:
       - $KAFKA_SSL_SECRETS_DIR:/etc/kafka/secrets
-      - $BOUNCY_CUSTOM_PROVIDER_MLKEM:/usr/share/java/kafka/SecurityCustomProvider.jar
+      - $BOUNCY_CUSTOM_PROVIDER_MLKEM:/usr/share/java/kafka/CustomSecurityProvider.jar
     environment:
       KAFKA_SSL_PROVIDER: BCJSSE
-      KAFKA_SECURITY_PROVIDERS: org.upm.tfg.securityCustomProvider.sslProv.BouncyJsseSecurityProvider, org.upm.tfg.securityCustomProvider.pqcProv.BouncyPqcSecurityProvider, org.upm.tfg.securityCustomProvider.standardProv.BouncyStandardSecurityProvider
+      KAFKA_SECURITY_PROVIDERS: org.upm.tfg.customSecurityProvider.sslProv.JsseSecurityProvider, org.upm.tfg.customSecurityProvider.pqcProv.PqcSecurityProvider, org.upm.tfg.customSecurityProvider.normalProv.NormalSecurityProvider    
       KAFKA_SSL_ENABLED_PROTOCOLS: TLSv1.3
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
