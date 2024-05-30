@@ -1,6 +1,6 @@
 # Post-Quantum Support Kafka
 
-This repository contains a final degree project focused on providing a basic functional infrastructure of [Apache Kafka](https://kafka.apache.org/) with post-quantum cryptography support using the [Bouncy Castle](https://www.bouncycastle.org/) library.
+This repository is part of a Bachelor Thesis focused on providing a basic functional infrastructure of [Apache Kafka](https://kafka.apache.org/) with post-quantum cryptography support using the [Bouncy Castle](https://www.bouncycastle.org/) library.
 
 ## What's in the repository?
 
