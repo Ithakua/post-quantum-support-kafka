@@ -1,8 +1,8 @@
 # Post-Quantum Support Kafka
 
-## Descripción del Proyecto
-
 Este repositorio contiene un trabajo final de grado y su propósito es ofrecer una infraestructura básica funcional de [Apache Kafka](https://kafka.apache.org/) con soporte de criptografía post-cuántica utilizando la librería [Bouncy Castle](https://www.bouncycastle.org/). 
+
+## Repositorio del Proyecto
 
 La estructura del proyecto es la siguiente:
 
