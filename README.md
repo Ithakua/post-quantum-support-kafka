@@ -38,8 +38,8 @@ Para lanzar el cliente de Kafka, primero necesitarás haber lanzado el servidor.
 1. Dentro del repositorio, encontrarás una carpeta llamada `./KafkaApp`. Este directorio contiene un proyecto **Java SpringBoot** que tiene lo necesario para establecer una conexión SSL personalizada con el servidor Kafka. Abre este proyecto con tu IDE de preferencia (yo utilicé IntelliJ).
 
 2. Una vez abierto el proyecto, descargar todas las dependencias de Maven y añadir adicionalmente el `.jar` que se encuentra en el directorio `./KafkaApp/libs` en función del modo de utilización del servidor:
-    - **SecurityCustomProvider_MLKEM** para configurar el cliente únicamente con conexiones MLKEM.
-    - **SecurityCustomProvider_AllGroups** para cargar la configuración necesaria para establecer conexiones tanto MLKEM como KEM clásicas.
+    - **CustomSecurityProvider_mlkem** para configurar el cliente únicamente con conexiones MLKEM.
+    - **CustomSecurityProvider_allgroups** para cargar la configuración necesaria para establecer conexiones tanto MLKEM como KEM clásicas.
 
 ### Consideraciones importantes
 
@@ -79,7 +79,7 @@ Para poder utilizar este proyecto, es necesario tener instalados los siguientes 
 
 - **Herramienta para visualizar archivos .pcap**: Necesaria para leer las capturas de tráfico de red, como Wireshark.
 
-- **pip3**: Si deseas utilizar el graficador para representar los resultados que se obtienen del SecurityCustomProvider (aplicación del repositorio custom-security-provider-kafka), necesitarás instalar los siguientes paquetes de Python:
+- **pip3**: Si deseas utilizar el graficador para representar los resultados que se obtienen del CustomSecurityProvider (aplicación del repositorio custom-security-provider-kafka), necesitarás instalar los siguientes paquetes de Python:
 
 ```
 pip3 install pandas matplotlib
