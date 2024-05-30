@@ -12,12 +12,12 @@ def clean_files():
     if confirm_execution():
         try:
             execute_shell_script("./scripts/cleanFiles.sh")
-            print("Se eliminaron todos los certificados y el docker-compose")
+            print("Se eliminaron todos los certificados y los ficheros de test")
             if os.path.exists("docker-compose.yaml"):
                 os.remove("docker-compose.yaml")
-                print("Se eliminó el archivo docker-compose.yaml.")
+                print("Se eliminó el archivo docker-compose.yaml")
             else:
-                print("El archivo docker-compose.yaml no existe.")
+                print("El archivo docker-compose.yaml no existe")
         except subprocess.CalledProcessError as e:
             print(f"Error ejecutando el script ./cleanFiles.sh: {e}")
         except OSError as e:

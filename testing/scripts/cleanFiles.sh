@@ -1,4 +1,8 @@
-#Elimina todos los archivos relacionados con certificados y credenciales:
+# Deletes all files related to certificates and credentials:
+
+# Test files
+find . \( -type f -name "*.csv" \)  -delete 
+find . \( -type f -name "*.pcap" \)  -delete 
 
 # Broker
 cd ../certificates/broker
@@ -10,4 +14,4 @@ find . \( -type f -name "*.key" -o -name "*.crt" -o -name "*.csr" -o -name "*.pe
 
 # CA
 cd ../ca
-find . \( -type f -name "*.crt" -o -name "*.key" -o -name "*.pem" \)  -delete 
+find . \( -type f -name "*.crt" -o -name "*.key" -o -name "*.pem" \)  -delete
