@@ -2,9 +2,9 @@
 
 Este repositorio contiene un trabajo final de grado y su propósito es ofrecer una infraestructura básica funcional de [Apache Kafka](https://kafka.apache.org/) con soporte de criptografía post-cuántica utilizando la librería [Bouncy Castle](https://www.bouncycastle.org/). 
 
-## Repositorio del Proyecto
+## ¿Qué contiene el repositorio?
 
-La estructura del proyecto es la siguiente:
+La estructura del repositorio es la siguiente:
 
 - **KafkaApp**: Una aplicación Springboot que proporciona un cliente Kafka. Ofrece un productor que recibe mensajes del tipo **String** a través de un endpoint que acepta peticiones **POST** con un **JSON** en de la forma `"message": <mensaje de ejemplo del tipo String>`, y un consumidor que lee los mensajes generados por el productor y los imprime como logs por la consola.
 - **testing**: Directorio que actua como un centro de control, es donde se lanzan todos los comandos para preparar la infraestructura servidor de Kafka y donde poder ejecutar los scripts que permiten monitorear la infraestructura para estudiar su funcionamiento.
