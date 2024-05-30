@@ -2,13 +2,14 @@
 
 ## Descripción del Proyecto
 
-Este repositorio contiene un trabajo final de grado y su propósito es ofrecer una infraestructura básica funcional de Apache Kafka con soporte de criptografía post-cuántica utilizando la librería de Bouncy Castle. 
+Este repositorio contiene un trabajo final de grado y su propósito es ofrecer una infraestructura básica funcional de Apache Kafka con soporte de criptografía post-cuántica utilizando la librería de [Bouncy Castle](https://github.com/bcgit/bc-java/tree/main). 
 
 La estructura del proyecto es la siguiente:
 
-- **Zookeeper y broker (servidor) de Kafka**: Se generan utilizando la tecnología de conteninerización que ofrece Docker vía Docker Compose.
-- **KafkaApp**: Una aplicación cliente que proporciona un productor que recibe mensajes del tipo **String** a través de un endpoint que acepta peticiones **POST** con un **JSON** en de la forma `"message": <mensaje de ejemplo del tipo String>`, y un consumidor que lee los mensajes generados por el productor y los imprime en formato log por la consola.
-- **Herramientas y scripts**: Se gestionan desde un centro de control, donde se lanzan todos los comandos para preparar la infraestructura de Kafka, lanzar el servidor y poder monitorear la infraestructura para estudiar su funcionamiento.
+- **KafkaApp**: Una aplicación cliente que proporciona un productor que recibe mensajes del tipo **String** a través de un endpoint que acepta peticiones **POST** con un **JSON** en de la forma `"message": <mensaje de ejemplo del tipo String>`, y un consumidor que lee los mensajes generados por el productor y los imprime como logs por la consola.
+- **testing**: Directorio que actua como un centro de control, es donde se lanzan todos los comandos para preparar la infraestructura servidor de Kafka y donde poder ejecutar los scripts que permiten monitorear la infraestructura para estudiar su funcionamiento.
+- **certificates**: Carpeta donde se guardan todos los ficheros relacionados con los certificados del cliente, el broker y la CA.
+- **docker**: Directorio que contiene las plantillas docker-compose.yaml que se utilizarán para lanzar el zookeeper y el servidor de kafka, también se pueden encontrar ficheros de configuración para pruebas.
 
 ## Cómo desplegar el servidor
 
@@ -21,12 +22,12 @@ Para lanzar el servidor de Kafka junto con Zookeeper, sigue estos pasos:
 3. Ejecuta `python3 startUp.py <modo de ejecucion>`, donde `<modo de ejecucion>` puede tener tres valores:
 
     - `default`: Despliega un broker de Kafka con la configuración por defecto sin ningún proveedor de seguridad personalizado. 
-    - `mlkem`: Despliega un broker con un proveedor SSL personalizado que utiliza el `BouncyCastleJSSEProvider` y que utiliza únicamente conexiones con los grupos `kyber512`, `kyber768` y `kyber1024`.
-    - `allgroups`: Despliega un broker con un proveedor SSL personalizado que utiliza el `BouncyCastleJSSEProvider` y que genera conexiones utilizando algoritmos criptográficos como `x448`, `x22519`, `P256`, `P384`, `p521` junto con los grupos `kyber512`, `kyber768` y `kyber1024`.
+    - `mlkem`: Despliega un broker con un proveedor SSL personalizado que utiliza el **BouncyCastleJSSEProvider** y que utiliza únicamente conexiones con los grupos `kyber512`, `kyber768` y `kyber1024`.
+    - `allgroups`: Despliega un broker con un proveedor SSL personalizado que utiliza el **BouncyCastleJSSEProvider** y que genera conexiones utilizando algoritmos criptográficos como `x448`, `x22519`, `P256`, `P384`, `p521` junto con los grupos `kyber512`, `kyber768` y `kyber1024`.
 
 Al ejecutar el script, se preparan para su uso los ficheros `docker-compose.yaml` disponibles en la carpeta `./docker`, se generarán los certificados necesarios y se lanzará un terminal donde se ejecutará el comando `docker compose up`.
 
-Todos los modos crean los certificados necesarios dentro del directorio `./certificates` y los firma por una CA autogenerada. Los grupos utilizados se pueden modificar y cambiar si también se utilizan las herramientas disponibles en el repositorio `SecurityCustomProvider` (más detalles en su repositorio).
+Todos los modos crean los certificados necesarios dentro del directorio `./certificates` y los firma por una CA autogenerada. Los grupos utilizados se pueden modificar y cambiar si también se utilizan las herramientas disponibles en el repositorio **SecurityCustomProvider** (más detalles en su repositorio).
 
 ## Cómo desplegar el cliente
 
@@ -35,12 +36,12 @@ Para lanzar el cliente de Kafka, primero necesitarás lanzar el servidor junto c
 1. Dentro del repositorio, encontrarás una carpeta llamada `KafkaApp`. Este es un proyecto Java Spring Boot que tiene lo necesario para establecer una conexión SSL personalizada con el servidor Kafka. Abre este proyecto con tu IDE de preferencia (yo utilicé IntelliJ).
 
 2. Una vez abierto el proyecto, descargar todas las dependencias de Maven y añadir adicionalmente el `.jar` que se encuentra en el directorio `/KafkaApp/libs` en función del modo de utilización del servidor:
-    - `SecurityCustomProvider_MLKEM` para configurar el cliente únicamente con conexiones MLKEM.
-    - `SecurityCustomProvider_AllGroups` para cargar la configuración necesaria para establecer conexiones tanto MLKEM como KEM clásicas.
+    - **SecurityCustomProvider_MLKEM** para configurar el cliente únicamente con conexiones MLKEM.
+    - **SecurityCustomProvider_AllGroups** para cargar la configuración necesaria para establecer conexiones tanto MLKEM como KEM clásicas.
 
 ### Consideraciones importantes
 
-La aplicación utiliza Lombok y se necesita Java 21 para poder ejecutar la aplicación.
+_La aplicación utiliza Lombok y se necesita Java 21 para poder ejecutar la aplicación._
 
 ## Cómo utilizar las herramientas de monitoreo
 
@@ -74,9 +75,9 @@ Para poder utilizar este proyecto, es necesario tener instalados los siguientes 
 
 ### Opcionales
 
-- **Herramienta para visualizar archivos .pcap**: Para leer las capturas de tráfico de red, como Wireshark.
+- **Herramienta para visualizar archivos .pcap**: Necesaria para leer las capturas de tráfico de red, como Wireshark.
 
-- **pip3**: Si deseas utilizar el graficador junto con los resultados del SecurityCustomProvider, necesitarás instalar los siguientes paquetes de Python:
+- **pip3**: Si deseas utilizar el graficador para representar los resultados que se obtienen del SecurityCustomProvider, necesitarás instalar los siguientes paquetes de Python:
 
 ```sh
 pip3 install pandas matplotlib
