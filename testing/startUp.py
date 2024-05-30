@@ -27,13 +27,13 @@ def loading_bar(seconds):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Elige el modo de ejecucion: default, mlkem o allgroups")
+        print("Choose the execution mode: default, mlkem or allgroups")
         sys.exit(1)
 
     parametro = sys.argv[1]
 
     if certificates_exist():
-        print("Los certificados ya existen. No se ejecutará el script.")
+        print("Certificates already exist. The script will not be executed.")
         sys.exit(1)
 
     if parametro == "mlkem":
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     elif parametro == "default":
         execute_shell_script("./scripts/auto_certificates_default.sh")
     else:
-        print("Parámetro de entrada no válido.")
+        print("Invalid input parameter.")
         sys.exit(1)
 
     execute_docker_compose()

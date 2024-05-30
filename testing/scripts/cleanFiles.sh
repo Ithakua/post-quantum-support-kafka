@@ -1,4 +1,4 @@
-# Deletes all files related to certificates and credentials:
+## Elimina todos los archivos relacionados con certificados, credenciales y ficheros de prueba:
 
 # Test files
 find . \( -type f -name "*.csv" \)  -delete 

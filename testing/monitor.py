@@ -5,7 +5,7 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Elige el modo de ejecucion: tcpdump, health, exec, graph o traffic")
+        print("Choose the execution mode: tcpdump, health, exec, graph or traffic")
         sys.exit(1)
 
     if "tcpdump" in sys.argv:
@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
         # Comprobar si se encontró una interfaz de red
         if interface is None:
-            print(f"No se encontró ninguna interfaz de red con la dirección IP {ip_address}")
+            print(f"No network interface was found with the IP address {ip_address}")
         else:
             # Comando para capturar el tráfico entre el broker y el cliente
             command2 = f"sudo tcpdump -i {interface} -nn -s0 -w kafka_traffic.pcap port 9093"
