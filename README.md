@@ -6,7 +6,7 @@ Este repositorio contiene un trabajo final de grado y su propósito es ofrecer u
 
 La estructura del proyecto es la siguiente:
 
-- **KafkaApp**: Una aplicación cliente que proporciona un productor que recibe mensajes del tipo **String** a través de un endpoint que acepta peticiones **POST** con un **JSON** en de la forma `"message": <mensaje de ejemplo del tipo String>`, y un consumidor que lee los mensajes generados por el productor y los imprime como logs por la consola.
+- **KafkaApp**: Una aplicación Springboot que proporciona un cliente Kafka. Ofrece un productor que recibe mensajes del tipo **String** a través de un endpoint que acepta peticiones **POST** con un **JSON** en de la forma `"message": <mensaje de ejemplo del tipo String>`, y un consumidor que lee los mensajes generados por el productor y los imprime como logs por la consola.
 - **testing**: Directorio que actua como un centro de control, es donde se lanzan todos los comandos para preparar la infraestructura servidor de Kafka y donde poder ejecutar los scripts que permiten monitorear la infraestructura para estudiar su funcionamiento.
 - **certificates**: Carpeta donde se guardan todos los ficheros relacionados con los certificados del cliente, el broker y la CA.
 - **docker**: Directorio que contiene las plantillas docker-compose.yaml que se utilizarán para lanzar el zookeeper y el servidor de kafka, también se pueden encontrar ficheros de configuración para pruebas.
