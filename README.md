@@ -29,7 +29,7 @@ Al ejecutar el script, se preparan para su uso los ficheros `docker-compose.yaml
 
 ### Consideraciones importantes
 
-_Todos los modos crean los certificados necesarios dentro del directorio `./certificates` y los firma por una CA autogenerada. Los grupos utilizados se pueden modificar y cambiar si también se utilizan las herramientas disponibles en el repositorio [SecurityCustomProvider](https://github.com/Ithakua/SecurityCustomProvider) (más detalles en el repositorio)._
+_Todos los modos crean los certificados necesarios dentro del directorio `./certificates` y los firma por una CA autogenerada. Los grupos utilizados se pueden modificar y cambiar si también se utilizan las herramientas disponibles en el repositorio [custom-security-provider-kafka](https://github.com/Ithakua/custom-security-provider-kafka) (más detalles en el repositorio)._
 
 ## Cómo desplegar el cliente
 
@@ -54,7 +54,7 @@ Las herramientas incluidas en el proyecto se despliegan todas desde el directori
     - `health`: Se utiliza para medir el rendimiento del contenedor donde está desplegado el broker.
     - `exec`: Este comando sirve para tener acceso al terminal del contenedor del broker.
     - `traffic`: Este parámetro permite sobrecargar de peticiones el endpoint del cliente para generar tráfico entre el cliente y el broker (se necesita tener en ejecución la aplicación cliente).
-    - `graph`: Esta utilidad está reservada a graficar los resultados medidos del tiempo de handshake que se generan utilizando el repositorio `SecurityCustomProvider`.
+    - `graph`: Esta utilidad está reservada a graficar los resultados medidos del tiempo de handshake que se generan utilizando el repositorio `custom-security-provider-kafka`.
 
 - `python3 startUp.py <modo de ejecución>`: Como se explica en el apartado "Cómo desplegar el servidor", tiene tres modos de funcionamiento:
     - `default`: Configuración estándar.
@@ -79,7 +79,7 @@ Para poder utilizar este proyecto, es necesario tener instalados los siguientes 
 
 - **Herramienta para visualizar archivos .pcap**: Necesaria para leer las capturas de tráfico de red, como Wireshark.
 
-- **pip3**: Si deseas utilizar el graficador para representar los resultados que se obtienen del SecurityCustomProvider, necesitarás instalar los siguientes paquetes de Python:
+- **pip3**: Si deseas utilizar el graficador para representar los resultados que se obtienen del SecurityCustomProvider (aplicación del repositorio custom-security-provider-kafka), necesitarás instalar los siguientes paquetes de Python:
 
 ```
 pip3 install pandas matplotlib
