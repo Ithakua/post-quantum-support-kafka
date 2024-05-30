@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2858cbb8-0848-4b9a-a964-c59c138ff569" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker/docker-compose_default.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker/docker-compose_default.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testing/scripts/cleanFiles.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../testing/scripts/cleanFiles.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testing/zerofile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +41,7 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.KafkaApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;finalVersion&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/ithaqua/Documents/Kafka/SandBox_Kafka/post-quantum-support-kafka/KafkaApp/libs/SecurityCustomProvider_AllGroups.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -107,6 +104,8 @@
       <workItem from="1716844722600" duration="3138000" />
       <workItem from="1716887151101" duration="4528000" />
       <workItem from="1716911392984" duration="4062000" />
+      <workItem from="1716928149732" duration="1788000" />
+      <workItem from="1716994725443" duration="15000" />
     </task>
     <servers />
   </component>
