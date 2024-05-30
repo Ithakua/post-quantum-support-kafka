@@ -79,6 +79,8 @@ Para poder utilizar este proyecto, es necesario tener instalados los siguientes 
 
 - **Herramienta para visualizar archivos .pcap**: Necesaria para leer las capturas de tráfico de red, como Wireshark.
 
+- **[custom-security-provider-kafka](https://github.com/Ithakua/custom-security-provider-kafka)**: Repositorio adicional con las herramientas necesarias para generar tus propios proovedores de seguridad personalizados y medir sus tiempos de handshake.
+
 - **pip3**: Si deseas utilizar el graficador para representar los resultados que se obtienen del CustomSecurityProvider (aplicación del repositorio custom-security-provider-kafka), necesitarás instalar los siguientes paquetes de Python:
 
 ```
