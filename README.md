@@ -79,6 +79,6 @@ To use this project, you need to have the following components installed:
 
 - **[custom-security-provider-kafka](https://github.com/Ithakua/custom-security-provider-kafka)**: Additional repository containing the CustomSecurityProvider, with tools needed to generate your own custom security providers and measure their handshake times.
 
-- **Tool to visualize .pcap files**: Necessary to read network traffic captures, such as Wireshark.
+- **pcap visualizer**: Necessary to read network traffic captures, such as Wireshark.
 
 - **pip3**: If you want to use the graphing tool to represent the results obtained from the CustomSecurityProvider, you will need to install the following Python packages:
