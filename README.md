@@ -59,7 +59,7 @@ The tools included in the project are all deployed from the `./testing` director
 - `python3 startUp.py <execution_mode>`: As explained in the "How to deploy the server" section, it has three modes of operation:
     - `default`: Standard configuration.
     - `mlkem`: Custom MLKEM configuration.
-    - `allgroups`: Hybrid configuration with classic KEM and MLKEM algorithms.
+    - `allgroups`: Mixed configuration with classic KEM and MLKEM algorithms.
 
 - `python3 cleanUp.py`: This script cleans up all test files, certificates (including the CA), and the `docker-compose.yaml`, leaving the environment ready for a new run.
 
