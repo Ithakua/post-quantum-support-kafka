@@ -2,7 +2,7 @@
 
 ## Descripción del Proyecto
 
-Este repositorio contiene un trabajo final de grado y su propósito es ofrecer una infraestructura básica funcional de Apache Kafka con soporte de criptografía post-cuántica utilizando la librería de [Bouncy Castle](https://github.com/bcgit/bc-java/tree/main). 
+Este repositorio contiene un trabajo final de grado y su propósito es ofrecer una infraestructura básica funcional de [Apache Kafka](https://kafka.apache.org/) con soporte de criptografía post-cuántica utilizando la librería de [Bouncy Castle](https://www.bouncycastle.org/). 
 
 La estructura del proyecto es la siguiente:
 
@@ -15,27 +15,27 @@ La estructura del proyecto es la siguiente:
 
 Para lanzar el servidor de Kafka junto con Zookeeper, sigue estos pasos:
 
-1. Descarga el repositorio `<Nombre del repositorio>` y accede a la carpeta `testing`.
+1. Descarga el repositorio `post-quantum-support-kafka` y accede a la carpeta `./testing`.
 
 2. Dentro de `testing`, ejecuta el comando `python3 cleanUp.py` para limpiar todos los archivos residuales, si los hubiera.
 
 3. Ejecuta `python3 startUp.py <modo de ejecucion>`, donde `<modo de ejecucion>` puede tener tres valores:
 
     - `default`: Despliega un broker de Kafka con la configuración por defecto sin ningún proveedor de seguridad personalizado. 
-    - `mlkem`: Despliega un broker con un proveedor SSL personalizado que utiliza el **BouncyCastleJSSEProvider** y que utiliza únicamente conexiones con los grupos `kyber512`, `kyber768` y `kyber1024`.
-    - `allgroups`: Despliega un broker con un proveedor SSL personalizado que utiliza el **BouncyCastleJSSEProvider** y que genera conexiones utilizando algoritmos criptográficos como `x448`, `x22519`, `P256`, `P384`, `p521` junto con los grupos `kyber512`, `kyber768` y `kyber1024`.
+    - `mlkem`: Despliega un broker con un proveedor SSL personalizado que utiliza el **BouncyCastleJSSEProvider** y que utiliza únicamente conexiones con los grupos _kyber512_, _kyber768_ y _kyber1024_.
+    - `allgroups`: Despliega un broker con un proveedor SSL personalizado que utiliza el **BouncyCastleJSSEProvider** y que genera conexiones utilizando algoritmos criptográficos como _x448_, _x22519_, _P256_, _P384_, _p521_ junto con los grupos _kyber512_, _kyber768_ y _kyber1024_.
 
 Al ejecutar el script, se preparan para su uso los ficheros `docker-compose.yaml` disponibles en la carpeta `./docker`, se generarán los certificados necesarios y se lanzará un terminal donde se ejecutará el comando `docker compose up`.
 
-Todos los modos crean los certificados necesarios dentro del directorio `./certificates` y los firma por una CA autogenerada. Los grupos utilizados se pueden modificar y cambiar si también se utilizan las herramientas disponibles en el repositorio **SecurityCustomProvider** (más detalles en su repositorio).
+Todos los modos crean los certificados necesarios dentro del directorio `./certificates` y los firma por una CA autogenerada. Los grupos utilizados se pueden modificar y cambiar si también se utilizan las herramientas disponibles en el repositorio [SecurityCustomProvider](https://github.com/Ithakua/SecurityCustomProvider) (más detalles en el repositorio).
 
 ## Cómo desplegar el cliente
 
 Para lanzar el cliente de Kafka, primero necesitarás lanzar el servidor junto con Zookeeper. Después, sigue estos pasos:
 
-1. Dentro del repositorio, encontrarás una carpeta llamada `KafkaApp`. Este es un proyecto Java Spring Boot que tiene lo necesario para establecer una conexión SSL personalizada con el servidor Kafka. Abre este proyecto con tu IDE de preferencia (yo utilicé IntelliJ).
+1. Dentro del repositorio, encontrarás una carpeta llamada `./KafkaApp`. Este directorio contiene un proyecto Java Spring Boot que tiene lo necesario para establecer una conexión SSL personalizada con el servidor Kafka. Abre este proyecto con tu IDE de preferencia (yo utilicé IntelliJ).
 
-2. Una vez abierto el proyecto, descargar todas las dependencias de Maven y añadir adicionalmente el `.jar` que se encuentra en el directorio `/KafkaApp/libs` en función del modo de utilización del servidor:
+2. Una vez abierto el proyecto, descargar todas las dependencias de Maven y añadir adicionalmente el `.jar` que se encuentra en el directorio `./KafkaApp/libs` en función del modo de utilización del servidor:
     - **SecurityCustomProvider_MLKEM** para configurar el cliente únicamente con conexiones MLKEM.
     - **SecurityCustomProvider_AllGroups** para cargar la configuración necesaria para establecer conexiones tanto MLKEM como KEM clásicas.
 
@@ -79,7 +79,6 @@ Para poder utilizar este proyecto, es necesario tener instalados los siguientes 
 
 - **pip3**: Si deseas utilizar el graficador para representar los resultados que se obtienen del SecurityCustomProvider, necesitarás instalar los siguientes paquetes de Python:
 
-```sh
+```
 pip3 install pandas matplotlib
-
-
+```
